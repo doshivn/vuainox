@@ -221,7 +221,7 @@
       .contact .big-tel:hover { color: #ff5b6a; }
       .contact address { font-style: normal; color: #c3cad3; font-size: 14px; margin-top: 8px; line-height: 1.7; }
       .contact address a { color: #fff; font-weight: 600; }
-      footer { padding: 26px 0 90px; color: var(--faint); font-size: 13px; }
+      footer { padding: 26px 0 34px; color: var(--faint); font-size: 13px; }
       footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: center; }
       footer b { color: var(--muted); letter-spacing: .12em; }
       .foot-logo { height: 46px; width: auto; }
@@ -315,16 +315,6 @@
         .post:hover .pth img { transform: none; }
       }
 
-      /* ---------- Mobile call bar ---------- */
-      .callbar {
-        display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
-        background: var(--steel); padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-        gap: 10px; border-top: 3px solid var(--red);
-      }
-      .callbar a { flex: 1; text-align: center; padding: 12px; border-radius: 7px; font-weight: 800; text-decoration: none; font-size: 15px; }
-      .callbar .c1 { background: var(--red); color: #fff; }
-      .callbar .c2 { background: #fff; color: var(--steel); }
-
       /* ---------- Floating contact buttons (bottom-right) ---------- */
       .float-contact {
         position: fixed; right: 18px; bottom: 18px; z-index: 80;
@@ -354,7 +344,7 @@
         100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0); }
       }
       @media (max-width: 720px) {
-        .float-contact { right: 14px; bottom: calc(84px + env(safe-area-inset-bottom)); }
+        .float-contact { right: 14px; bottom: calc(16px + env(safe-area-inset-bottom)); }
         .float-contact a { height: 46px; padding: 0 17px 0 14px; font-size: 14px; }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -407,14 +397,18 @@
         .hero-in { padding: 26px 0 36px; }
         .hero-logo { width: 112px; margin-bottom: 12px; }
         .hero .hero-brand-sub { margin-bottom: 18px; }
-        .callbar { display: flex; }
-        .toolbar { top: 65px; padding: 12px 0 10px; }
-        .chips { gap: 6px; margin-bottom: 10px; }
-        .chip { padding: 6px 11px; font-size: 12.5px; }
+        .toolbar { top: 65px; padding: 10px 0 8px; }
+        .chips {
+          flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin-bottom: 8px; padding-bottom: 2px;
+          scrollbar-width: none; -webkit-overflow-scrolling: touch;
+        }
+        .chips::-webkit-scrollbar { display: none; }
+        .chip { padding: 5px 10px; font-size: 12px; white-space: nowrap; flex: none; }
         .tools { gap: 8px; }
-        .search input { padding: 9px 12px 9px 36px; font-size: 14px; }
-        .tools select { padding: 9px 10px; font-size: 13.5px; }
-        .count { font-size: 12.5px; }
+        .search { flex: 1 1 0; min-width: 0; }
+        .search input { padding: 8px 10px 8px 34px; font-size: 13.5px; }
+        .tools select { flex: none; width: 128px; padding: 8px 8px; font-size: 13px; }
+        .count { font-size: 12px; }
         .group-head { margin: 24px 0 4px; }
         .group-head h2 { font-size: 19px; }
         .group-sub { font-size: 13px; margin-bottom: 12px; }
@@ -649,11 +643,6 @@
           <span>Hotline: 090 342 77 43</span>
         </div>
       </footer>
-    </div>
-
-    <div class="callbar">
-      <a class="c1" href="tel:0903427743">Gọi 090 342 77 43</a>
-      <a class="c2" href="https://zalo.me/0903427743" target="_blank" rel="noopener">Nhắn Zalo</a>
     </div>
 
     <div class="float-contact">
